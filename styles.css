@@ -1,0 +1,250 @@
+:root {
+    --primary-bg: #2b2d42; /* Soft dark slate */
+    --secondary-bg: #3a3f58; /* Muted indigo */
+    --card-bg: #4b4e6d; /* Desaturated dark blue-gray */
+    --primary-color: #a5a1df; /* Muted soft gray-blue */
+    --secondary-color: #edf2f4; /* Light cool gray */
+    --text-color: #f8f9fa; /* Light neutral gray */
+    --hover-color: #8d99ae; /* Hover color for icons */
+    --dimmed-icon: #6c757d; /* Muted gray for dimmed icons */
+    --accent-teal: #38b6ff; /* Soft cyan accent color */
+    --accent-yellow: #ffb703; /* Warm soft yellow accent */
+}
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    /* font-family: 'Arial', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 0 20px;
+    background-color: var(--primary-bg);
+    margin: auto;
+    width: 70%;
+}
+
+h1, h2, h3, .hero h1, .review-section h2, .book-info h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    border-bottom: 8px solid var(--accent-teal);
+    display: inline block;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* Books Section */
+.book-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.book {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    width: 22%;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 1px 1px var(--accent-yellow);
+    /* border: 2px solid var(--accent-teal); */
+}
+
+.book-cover img {
+    width: 100%;
+    height: 320px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.book-info {
+    margin-top: 15px;
+}
+
+.book-info h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.book-info p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.book-info .book-author {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--hover-color); /* Soft light gray */
+    margin-bottom: 5px;
+    /* font-style: italic; */
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.book-author:hover {
+    color: var(--accent-teal); /* Subtle highlight on hover */
+}
+
+/* Absolute Positioning Practice */
+.book-info h2 {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    padding-left: 10px;
+    border-left: 5px solid var(--accent-yellow);
+}
+
+.book-cover img {
+    position: relative;
+    top: 10px;
+    left: 0;
+}
+
+/* Review Section */
+.review-section {
+    padding: 40px 20px;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.review-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    border-bottom: 8px solid var(--accent-teal);
+}
+
+.review-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.review {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    margin: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+    /* border: 2px solid var(--accent-yellow); */
+    box-shadow: 0px 1px 1px var(--accent-yellow);
+}
+
+.review h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.review p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Contact Us Section */
+.contact-us {
+    padding: 40px 20px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    margin-top: 40px;
+    border-radius: 10px;
+    text-align: center;
+    /* border: 2px solid var(--accent-teal); */
+}
+
+.contact-us h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    border-bottom: 8px solid var(--accent-teal);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.icon {
+    font-size: 2rem;
+    color: var(--dimmed-icon);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover {
+    color: var(--accent-yellow);
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .book-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .review-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        gap: 20px;
+    }
+}

@@ -278,7 +278,7 @@ h1, h2, h3 {
     top: -100%;
     left: -50px;
     width: 100px;
-    background-color: var(--accent-teal);
+    background-color: var(--hover-color);
     height: 600%;
 
     translate: -50% -50%;

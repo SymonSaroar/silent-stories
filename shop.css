@@ -1,0 +1,354 @@
+/* Variables */
+:root {
+    --primary-bg: #2b2d42; /* Soft dark slate */
+    --secondary-bg: #3a3f58; /* Muted indigo */
+    --card-bg: #4b4e6d; /* Desaturated dark blue-gray */
+    --primary-color: #a5a1df; /* Muted soft gray-blue */
+    --secondary-color: #edf2f4; /* Light cool gray */
+    --text-color: #f8f9fa; /* Light neutral gray */
+    --hover-color: #8d99ae; /* Hover color for icons */
+    --dimmed-icon: #6c757d; /* Muted gray for dimmed icons */
+    --accent-teal: #38b6ff; /* Soft cyan accent color */
+    --accent-yellow: #ffb703; /* Warm soft yellow accent */
+}
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 0 20px;
+    background-color: var(--primary-bg);
+    margin: auto;
+    width: 70%;
+}
+
+h1, h2, h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    border-bottom: 8px solid var(--accent-teal);
+    /* display: inline-block; */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* Shop Section */
+.shop {
+    margin: auto;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    padding: 60px 20px;
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+    overflow-x: auto;
+}
+
+.shop table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+/* .shop caption {
+    font-size: 1.6rem;
+    font-family: Roboto;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-teal);
+} */
+
+.shop caption {
+    font-size: 1.8rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    padding: 15px;
+    background-color: var(--accent-yellow); /* Bright background color */
+    color: var(--primary-bg); /* Dark text color for contrast */
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+
+/* Optional: Adding a 'flash' or 'badge' style effect */
+.shop caption::before {
+    content: "Limited Time Offer!";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--accent-teal);
+    color: var(--text-color);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transform: rotate(-10deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shop th, .shop td {
+    padding: 1rem 2rem;
+    text-align: left;
+    border: 1px solid var(--secondary-bg);
+}
+
+.shop th {
+    background-color: var(--card-bg);
+    color: var(--secondary-color);
+}
+
+.shop td {
+    display: table-cell;
+    place-items: center;
+    /* background-color: var(--card-bg); */
+    transition: all 0.3s ease-in-out;
+}
+.shop tr:hover {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.15);
+}
+
+.shop .cover div {
+    display: grid;
+    place-items: center;
+}
+.shop .cover img {
+    margin: auto;
+    vertical-align: middle;
+    aspect-ratio: 1/1.618;
+    width: 150px;
+    border-radius: 0 0.5rem 0.5rem 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.shop tr:hover .cover img {
+    width: 160px;
+}
+
+/* Description Section */
+.shop .col-description {
+    width: 50%;
+}
+/* .shop .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+} */
+
+.shop .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: var(--accent-teal); /* Accent color for better visibility */
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.shop .title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    height: 3px;
+    background-color: var(--accent-yellow);
+    border-radius: 3px;
+    transition: width 0.3s ease-in-out;
+}
+
+.shop tr:hover .title::after {
+    width: 100%;
+}
+
+.shop .title:hover {
+    color: var(--accent-yellow);
+    cursor: pointer;
+}
+
+.shop .title:hover {
+    color: var(--accent-yellow);
+    text-shadow: 0 0 20px rgba(255, 183, 3, 0.5);
+    cursor: pointer;
+}
+
+.shop .author {
+    font-family: 'Lora', serif;
+    font-style: italic;
+}
+
+/* Action Section */
+.shop .col-action {
+    width: 25%;
+}
+.shop .action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.shop .action > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.shop .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-yellow);
+}
+.shop .price:hover {
+    color: var(--accent-teal);
+    transition: color 0.3s ease-in-out;
+}
+.shop .btn-book {
+    width: 100%;
+    justify-content: center;
+}
+
+.shop .btn-buy, .shop .btn-book {
+    padding: 0.6rem 1rem;
+    background-color: var(--accent-teal);
+    color: var(--primary-bg);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shop .btn-buy:hover, .shop .btn-book:hover {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.shop .btn-buy {
+    background-color: var(--accent-yellow);
+    color: var(--primary-bg);
+    font-weight: bold;
+    padding: 0.6rem 1rem;
+}
+
+
+/* Contact Us */
+.contact-us {
+    padding: 40px 20px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    margin-top: 40px;
+    border-radius: 10px;
+    text-align: center;
+    /* border: 2px solid var(--accent-teal); */
+}
+
+.contact-us h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    border-bottom: 8px solid var(--accent-teal);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.icon {
+    font-size: 2rem;
+    color: var(--dimmed-icon);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover {
+    color: var(--accent-yellow);
+    transform: scale(1.2);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .shop .title {
+        font-size: 1.4rem;
+    }
+
+    .social-icons {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .shop .action > div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .shop .btn-buy, .shop .btn-book {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .shop .price {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .shop .action > div {
+        gap: 0.3rem;
+    }
+
+    .shop .price {
+        font-size: 1rem;
+    }
+
+    .shop .btn-buy, .shop .btn-book {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
